@@ -1,0 +1,51 @@
+yacc.py: 360:PLY: PARSE DEBUG START
+yacc.py: 408:
+yacc.py: 409:State  : 0
+yacc.py: 433:Stack  : . LexToken(NUMBER,1.0,1,0)
+yacc.py: 443:Action : Shift and goto state 2
+yacc.py: 408:
+yacc.py: 409:State  : 2
+yacc.py: 433:Stack  : NUMBER . LexToken(PLUS,'+',1,1)
+yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [1.0] and goto state 1
+yacc.py: 504:Result : <float @ 0x16645f8> (1.0)
+yacc.py: 408:
+yacc.py: 409:State  : 1
+yacc.py: 433:Stack  : EXPR . LexToken(PLUS,'+',1,1)
+yacc.py: 443:Action : Shift and goto state 9
+yacc.py: 408:
+yacc.py: 409:State  : 9
+yacc.py: 433:Stack  : EXPR PLUS . LexToken(NUMBER,1.0,1,2)
+yacc.py: 443:Action : Shift and goto state 2
+yacc.py: 408:
+yacc.py: 409:State  : 2
+yacc.py: 433:Stack  : EXPR PLUS NUMBER . LexToken(TIMES,'*',1,3)
+yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [1.0] and goto state 20
+yacc.py: 504:Result : <float @ 0x1664610> (1.0)
+yacc.py: 408:
+yacc.py: 409:State  : 20
+yacc.py: 433:Stack  : EXPR PLUS EXPR . LexToken(TIMES,'*',1,3)
+yacc.py: 443:Action : Shift and goto state 7
+yacc.py: 408:
+yacc.py: 409:State  : 7
+yacc.py: 433:Stack  : EXPR PLUS EXPR TIMES . LexToken(NUMBER,3.0,1,4)
+yacc.py: 443:Action : Shift and goto state 2
+yacc.py: 408:
+yacc.py: 409:State  : 2
+yacc.py: 433:Stack  : EXPR PLUS EXPR TIMES NUMBER . $end
+yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [3.0] and goto state 18
+yacc.py: 504:Result : <float @ 0x1664628> (3.0)
+yacc.py: 408:
+yacc.py: 409:State  : 18
+yacc.py: 433:Stack  : EXPR PLUS EXPR TIMES EXPR . $end
+yacc.py: 469:Action : Reduce rule [EXPR -> EXPR TIMES EXPR] with [1.0,'*',3.0] and goto state 20
+yacc.py: 504:Result : <float @ 0x16645e0> (3.0)
+yacc.py: 408:
+yacc.py: 409:State  : 20
+yacc.py: 433:Stack  : EXPR PLUS EXPR . $end
+yacc.py: 469:Action : Reduce rule [EXPR -> EXPR PLUS EXPR] with [1.0,'+',3.0] and goto state 1
+yacc.py: 504:Result : <float @ 0x1664610> (4.0)
+yacc.py: 408:
+yacc.py: 409:State  : 1
+yacc.py: 433:Stack  : EXPR . $end
+yacc.py: 569:Done   : Returning <float @ 0x1664610> (4.0)
+yacc.py: 570:PLY: PARSE DEBUG END
