@@ -1,0 +1,5 @@
+a=3
+b=true
+c=false
+d=4
+c=1/2

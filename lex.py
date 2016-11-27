@@ -11,7 +11,7 @@ reserved = {
    'if' : 'IF',
    'else' : 'ELSE',
    'while' : 'WHILE',
-   # 'for' : 'FOR',
+   'for' : 'FOR',
    'define' : 'DEFINE'
 }
 
@@ -37,13 +37,11 @@ tokens = [
    'MINUSEQUAL',
    'TIMESEQUAL',
    'BOOL',
-   'EXP',
-   'FOR'
+   'EXP'
 ]+list(reserved.values())
 
 # expressoes regulares para expressoes simples
 t_LPAREN  = r'\('
-t_FOR  = r'for'
 t_RPAREN  = r'\)'
 t_PLUS    = r'\+'
 t_MINUS   = r'-'
@@ -57,7 +55,7 @@ t_LCURLYBRACKETS = r'{'
 t_RCURLYBRACKETS = r'}'
 t_SEMICOLON = r';'
 t_ATTR = r'='
-t_ID = r'[a-zA-Z_][a-zA-Z0-9_]*'
+#t_ID = r'[a-zA-Z_][a-zA-Z0-9_]*'
 t_COMMA = r','
 t_PLUSEQUAL = r'\+='
 t_MINUSEQUAL = r'-='
@@ -73,8 +71,13 @@ t_ignore  = ' \t'
 # regra para identificar numeros inteiros
 def t_NUMBER(t):
 	r'\d+'
-	t.value = float(t.value)    
+	t.value = int(t.value)    
 	return t
+
+def t_ID(t):
+   r'[a-zA-Z_][a-zA-Z0-9_]*'
+   t.type = reserved.get(t.value, 'ID')
+   return t
 
 #regra para identificar bolean
 def t_BOOL(t):

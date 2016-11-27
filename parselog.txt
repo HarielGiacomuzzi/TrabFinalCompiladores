@@ -1,51 +1,97 @@
-yacc.py: 360:PLY: PARSE DEBUG START
-yacc.py: 408:
-yacc.py: 409:State  : 0
-yacc.py: 433:Stack  : . LexToken(NUMBER,1.0,1,0)
-yacc.py: 443:Action : Shift and goto state 2
-yacc.py: 408:
-yacc.py: 409:State  : 2
-yacc.py: 433:Stack  : NUMBER . LexToken(PLUS,'+',1,1)
-yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [1.0] and goto state 1
-yacc.py: 504:Result : <float @ 0x16645f8> (1.0)
-yacc.py: 408:
-yacc.py: 409:State  : 1
-yacc.py: 433:Stack  : EXPR . LexToken(PLUS,'+',1,1)
-yacc.py: 443:Action : Shift and goto state 9
-yacc.py: 408:
-yacc.py: 409:State  : 9
-yacc.py: 433:Stack  : EXPR PLUS . LexToken(NUMBER,1.0,1,2)
-yacc.py: 443:Action : Shift and goto state 2
-yacc.py: 408:
-yacc.py: 409:State  : 2
-yacc.py: 433:Stack  : EXPR PLUS NUMBER . LexToken(TIMES,'*',1,3)
-yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [1.0] and goto state 20
-yacc.py: 504:Result : <float @ 0x1664610> (1.0)
-yacc.py: 408:
-yacc.py: 409:State  : 20
-yacc.py: 433:Stack  : EXPR PLUS EXPR . LexToken(TIMES,'*',1,3)
-yacc.py: 443:Action : Shift and goto state 7
-yacc.py: 408:
-yacc.py: 409:State  : 7
-yacc.py: 433:Stack  : EXPR PLUS EXPR TIMES . LexToken(NUMBER,3.0,1,4)
-yacc.py: 443:Action : Shift and goto state 2
-yacc.py: 408:
-yacc.py: 409:State  : 2
-yacc.py: 433:Stack  : EXPR PLUS EXPR TIMES NUMBER . $end
-yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [3.0] and goto state 18
-yacc.py: 504:Result : <float @ 0x1664628> (3.0)
-yacc.py: 408:
-yacc.py: 409:State  : 18
-yacc.py: 433:Stack  : EXPR PLUS EXPR TIMES EXPR . $end
-yacc.py: 469:Action : Reduce rule [EXPR -> EXPR TIMES EXPR] with [1.0,'*',3.0] and goto state 20
-yacc.py: 504:Result : <float @ 0x16645e0> (3.0)
-yacc.py: 408:
-yacc.py: 409:State  : 20
-yacc.py: 433:Stack  : EXPR PLUS EXPR . $end
-yacc.py: 469:Action : Reduce rule [EXPR -> EXPR PLUS EXPR] with [1.0,'+',3.0] and goto state 1
-yacc.py: 504:Result : <float @ 0x1664610> (4.0)
-yacc.py: 408:
-yacc.py: 409:State  : 1
-yacc.py: 433:Stack  : EXPR . $end
-yacc.py: 569:Done   : Returning <float @ 0x1664610> (4.0)
-yacc.py: 570:PLY: PARSE DEBUG END
+   yacc.py: 360:PLY: PARSE DEBUG START
+   yacc.py: 408:
+   yacc.py: 409:State  : 0
+   yacc.py: 433:Stack  : . LexToken(FOR,'for',1,0)
+   yacc.py: 443:Action : Shift and goto state 8
+   yacc.py: 408:
+   yacc.py: 409:State  : 8
+   yacc.py: 433:Stack  : FOR . LexToken(LPAREN,'(',1,3)
+   yacc.py: 443:Action : Shift and goto state 29
+   yacc.py: 408:
+   yacc.py: 409:State  : 29
+   yacc.py: 433:Stack  : FOR LPAREN . LexToken(NUMBER,1,1,4)
+   yacc.py: 443:Action : Shift and goto state 3
+   yacc.py: 408:
+   yacc.py: 409:State  : 3
+   yacc.py: 433:Stack  : FOR LPAREN NUMBER . LexToken(SEMICOLON,';',1,5)
+   yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [1] and goto state 41
+   yacc.py: 504:Result : <int @ 0x7fa4e7503bb8> (1)
+   yacc.py: 408:
+   yacc.py: 409:State  : 41
+   yacc.py: 433:Stack  : FOR LPAREN EXPR . LexToken(SEMICOLON,';',1,5)
+   yacc.py: 443:Action : Shift and goto state 48
+   yacc.py: 408:
+   yacc.py: 409:State  : 48
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON . LexToken(NUMBER,10,1,6)
+   yacc.py: 443:Action : Shift and goto state 3
+   yacc.py: 408:
+   yacc.py: 409:State  : 3
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON NUMBER . LexToken(SEMICOLON,';',1,8)
+   yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [10] and goto state 50
+   yacc.py: 504:Result : <int @ 0x7fa4e7503ae0> (10)
+   yacc.py: 408:
+   yacc.py: 409:State  : 50
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR . LexToken(SEMICOLON,';',1,8)
+   yacc.py: 443:Action : Shift and goto state 52
+   yacc.py: 408:
+   yacc.py: 409:State  : 52
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON . LexToken(NUMBER,1,1,9)
+   yacc.py: 443:Action : Shift and goto state 3
+   yacc.py: 408:
+   yacc.py: 409:State  : 3
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON NUMBER . LexToken(RPAREN,')',1,10)
+   yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [1] and goto state 53
+   yacc.py: 504:Result : <int @ 0x7fa4e7503bb8> (1)
+   yacc.py: 408:
+   yacc.py: 409:State  : 53
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR . LexToken(RPAREN,')',1,10)
+   yacc.py: 443:Action : Shift and goto state 54
+   yacc.py: 408:
+   yacc.py: 409:State  : 54
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN . LexToken(LCURLYBRACKETS,'{',1,11)
+   yacc.py: 443:Action : Shift and goto state 15
+   yacc.py: 408:
+   yacc.py: 409:State  : 15
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN LCURLYBRACKETS . LexToken(NUMBER,1,1,12)
+   yacc.py: 443:Action : Shift and goto state 3
+   yacc.py: 408:
+   yacc.py: 409:State  : 3
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN LCURLYBRACKETS NUMBER . LexToken(SEMICOLON,';',1,13)
+   yacc.py: 469:Action : Reduce rule [EXPR -> NUMBER] with [1] and goto state 33
+   yacc.py: 504:Result : <int @ 0x7fa4e7503bb8> (1)
+   yacc.py: 408:
+   yacc.py: 409:State  : 33
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN LCURLYBRACKETS EXPR . LexToken(SEMICOLON,';',1,13)
+   yacc.py: 443:Action : Shift and goto state 18
+   yacc.py: 408:
+   yacc.py: 409:State  : 18
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN LCURLYBRACKETS EXPR SEMICOLON . LexToken(RCURLYBRACKETS,'}',1,14)
+   yacc.py: 469:Action : Reduce rule [CMD -> EXPR SEMICOLON] with [1,';'] and goto state 34
+   yacc.py: 504:Result : <NoneType @ 0x109b8a678> (None)
+   yacc.py: 408:
+   yacc.py: 409:State  : 34
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN LCURLYBRACKETS CMD . LexToken(RCURLYBRACKETS,'}',1,14)
+   yacc.py: 443:Action : Shift and goto state 45
+   yacc.py: 408:
+   yacc.py: 409:State  : 45
+   yacc.py: 428:Defaulted state 45: Reduce using 17
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN LCURLYBRACKETS CMD RCURLYBRACKETS . None
+   yacc.py: 469:Action : Reduce rule [BLOCK -> LCURLYBRACKETS CMD RCURLYBRACKETS] with ['{',None,'}'] and goto state 55
+   yacc.py: 504:Result : <NoneType @ 0x109b8a678> (None)
+   yacc.py: 408:
+   yacc.py: 409:State  : 55
+   yacc.py: 428:Defaulted state 55: Reduce using 29
+   yacc.py: 433:Stack  : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN BLOCK . None
+   yacc.py: 469:Action : Reduce rule [FORS -> FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN BLOCK] with ['for','(',1,';',10,';',1,')',None] and goto state 11
+   yacc.py: 504:Result : <tuple @ 0x109e4b830> (('for', 1, 10, 1, None))
+   yacc.py: 408:
+   yacc.py: 409:State  : 11
+   yacc.py: 428:Defaulted state 11: Reduce using 4
+   yacc.py: 433:Stack  : FORS . None
+   yacc.py: 469:Action : Reduce rule [STATMENT -> FORS] with [<tuple @ 0x109e4b830>] and goto state 9
+   yacc.py: 504:Result : <NoneType @ 0x109b8a678> (None)
+   yacc.py: 408:
+   yacc.py: 409:State  : 9
+   yacc.py: 433:Stack  : STATMENT . $end
+   yacc.py: 569:Done   : Returning <NoneType @ 0x109b8a678> (None)
+   yacc.py: 570:PLY: PARSE DEBUG END

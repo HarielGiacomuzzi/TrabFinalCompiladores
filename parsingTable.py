@@ -5,9 +5,9 @@ _tabversion = '3.8'
 
 _lr_method = 'LALR'
 
-_lr_signature = 'C4F0829E1408D95643A99CCC32A50CC8'
+_lr_signature = '0BCAAE09FA8A91D618AB93F4C1E627AD'
     
-_lr_action_items = {'RPAREN':([2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[-1,-4,25,-9,-13,-10,-11,-7,-12,-14,-8,-6,-5,-2,-3,]),'DIVIDE':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[5,-1,-4,5,-9,5,-10,5,5,5,5,5,5,-5,-2,-3,]),'MINUS':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[12,-1,-4,12,-9,12,-10,12,-7,12,12,-8,12,-5,-2,-3,]),'MINUSEQUAL':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[6,-1,-4,6,-9,6,-10,6,-7,6,6,-8,6,-5,-2,-3,]),'NUMBER':([0,3,5,6,7,8,9,10,11,12,13,15,],[2,2,2,2,2,2,2,2,2,2,2,26,]),'TIMES':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[7,-1,-4,7,-9,7,-10,7,7,7,7,7,7,-5,-2,-3,]),'PLUSEQUAL':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[8,-1,-4,8,-9,8,-10,8,-7,8,8,-8,8,-5,-2,-3,]),'PLUS':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[9,-1,-4,9,-9,9,-10,9,-7,9,9,-8,9,-5,-2,-3,]),'ATTR':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[13,-1,15,13,-9,13,-10,13,-7,13,13,-8,13,-5,-2,-3,]),'LPAREN':([0,3,5,6,7,8,9,10,11,12,13,],[3,3,3,3,3,3,3,3,3,3,3,]),'BOOL':([15,],[27,]),'EXP':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[10,-1,-4,10,-9,10,-10,10,-7,10,10,-8,10,-5,-2,-3,]),'TIMESEQUAL':([1,2,4,14,16,17,18,19,20,21,22,23,24,25,26,27,],[11,-1,-4,11,-9,11,-10,11,-7,11,11,-8,11,-5,-2,-3,]),'ID':([0,3,5,6,7,8,9,10,11,12,13,],[4,4,4,4,4,4,4,4,4,4,4,]),'$end':([1,2,4,16,17,18,19,20,21,22,23,24,25,26,27,],[0,-1,-4,-9,-13,-10,-11,-7,-12,-14,-8,-6,-5,-2,-3,]),}
+_lr_action_items = {'RCURLYBRACKETS':([6,15,18,34,36,],[-27,-30,-25,45,-26,]),'SEMICOLON':([3,5,12,31,33,37,38,39,41,42,43,44,50,],[-8,18,-11,-11,18,-14,-13,-15,48,-12,-9,-10,52,]),'RPAREN':([3,30,31,37,38,39,42,43,44,46,47,53,],[-8,42,-11,-14,-13,-15,-12,-9,-10,49,-16,54,]),'DIVIDE':([3,5,12,31,37,38,39,42,43,44,],[-8,17,-11,-11,-14,-13,-15,-12,-9,-10,]),'FOR':([0,],[8,]),'MINUS':([3,5,12,31,37,38,39,42,43,44,],[-8,26,-11,-11,-14,-13,-15,-12,-9,-10,]),'MINUSEQUAL':([3,5,12,30,31,33,35,37,38,39,41,42,43,44,50,53,],[-8,19,-11,19,-11,19,19,19,-13,-15,19,-12,-9,-10,19,19,]),'NUMBER':([0,10,15,16,17,18,19,20,21,22,23,24,25,26,27,29,32,48,52,],[3,3,3,3,-20,3,3,-21,3,-22,-18,-23,3,-19,-24,3,43,3,3,]),'TIMES':([3,5,12,31,37,38,39,42,43,44,],[-8,20,-11,-11,-14,-13,-15,-12,-9,-10,]),'PLUSEQUAL':([3,5,12,30,31,33,35,37,38,39,41,42,43,44,50,53,],[-8,21,-11,21,-11,21,21,21,21,21,21,-12,-9,-10,21,21,]),'LESSTHAN':([3,5,12,31,37,38,39,42,43,44,],[-8,22,-11,-11,-14,-13,-15,-12,-9,-10,]),'BOOL':([32,],[44,]),'PLUS':([3,5,12,31,37,38,39,42,43,44,],[-8,23,-11,-11,-14,-13,-15,-12,-9,-10,]),'ATTR':([3,5,12,31,37,38,39,42,43,44,],[-8,27,-11,-11,-14,-13,-15,-12,-9,-10,]),'LPAREN':([0,8,10,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,48,52,],[10,29,10,10,10,-20,10,10,-21,10,-22,-18,-23,10,-19,-24,40,10,10,10,]),'GREATERTHAN':([3,5,12,31,37,38,39,42,43,44,],[-8,24,-11,-11,-14,-13,-15,-12,-9,-10,]),'DEFINE':([0,],[7,]),'TIMESEQUAL':([3,5,12,30,31,33,35,37,38,39,41,42,43,44,50,53,],[-8,25,-11,25,-11,25,25,25,25,25,25,-12,-9,-10,25,25,]),'ID':([0,7,10,15,16,17,18,19,20,21,22,23,24,25,26,27,29,40,48,52,],[12,28,31,31,31,-20,31,31,-21,31,-22,-18,-23,31,-19,-24,31,47,31,31,]),'LCURLYBRACKETS':([0,49,54,],[15,15,15,]),'$end':([0,1,2,3,4,6,9,11,12,13,14,18,31,35,36,37,38,39,42,43,44,45,51,55,],[-30,-6,-3,-8,-2,-27,0,-4,-16,-1,-5,-25,-11,-7,-26,-14,-13,-15,-12,-9,-10,-17,-28,-29,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -16,7 +16,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'EXPR':([0,3,5,6,7,8,9,10,11,12,13,],[1,14,16,17,18,19,20,21,22,23,24,]),}
+_lr_goto_items = {'LID':([0,40,],[1,46,]),'OPER':([5,],[16,]),'EXPR':([0,10,15,16,18,19,21,25,29,48,52,],[5,30,33,35,33,37,38,39,41,50,53,]),'CMD':([0,15,18,],[2,34,36,]),'STATMENT':([0,],[9,]),'EXPR1':([0,],[13,]),'empty':([0,15,18,],[6,6,6,]),'FORS':([0,],[11,]),'BLOCK':([0,49,54,],[4,51,55,]),'DEFINES':([0,],[14,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -25,34 +25,35 @@ for _k, _v in _lr_goto_items.items():
        _lr_goto[_x][_k] = _y
 del _lr_goto_items
 _lr_productions = [
-  ("S' -> EXPR","S'",1,None,None,None),
-  ('EXPR -> NUMBER','EXPR',1,'p_EXPR_NUMBER','sintatico.py',31),
-  ('EXPR -> ID ATTR NUMBER','EXPR',3,'p_EXPR_ID_ATTR_EXPR','sintatico.py',35),
-  ('EXPR -> ID ATTR BOOL','EXPR',3,'p_EXPR_ID_ATTR_EXPR','sintatico.py',36),
-  ('EXPR -> ID','EXPR',1,'p_EXPR_ID','sintatico.py',41),
-  ('EXPR -> LPAREN EXPR RPAREN','EXPR',3,'p_EXPR_LPAREN_EXPR_RPAREN','sintatico.py',49),
-  ('EXPR -> EXPR ATTR EXPR','EXPR',3,'p_EXPR_ATTR_EXPR','sintatico.py',53),
-  ('EXPR -> EXPR PLUS EXPR','EXPR',3,'p_EXPR_PLUS_EXPR','sintatico.py',57),
-  ('EXPR -> EXPR MINUS EXPR','EXPR',3,'p_EXPR_MINUS_EXPR','sintatico.py',61),
-  ('EXPR -> EXPR DIVIDE EXPR','EXPR',3,'p_EXPR_DIVIDE_EXPR','sintatico.py',65),
-  ('EXPR -> EXPR TIMES EXPR','EXPR',3,'p_EXPR_TIMES_EXPR','sintatico.py',69),
-  ('EXPR -> EXPR PLUSEQUAL EXPR','EXPR',3,'p_EXPR_PLUSEQUAL_EXPR','sintatico.py',73),
-  ('EXPR -> EXPR EXP EXPR','EXPR',3,'p_EXPR_EXP_EXPR','sintatico.py',77),
-  ('EXPR -> EXPR MINUSEQUAL EXPR','EXPR',3,'p_EXPR_MINUSEQUAL_EXPR','sintatico.py',81),
-  ('EXPR -> EXPR TIMESEQUAL EXPR','EXPR',3,'p_EXPR_TIMESEQUAL_EXPR','sintatico.py',85),
-  ('LID -> ID','LID',1,'p_LID','sintatico.py',89),
-  ('BLOCK -> LCURLYBRACKETS CMD RCURLYBRACKETS','BLOCK',3,'p_BLOCK','sintatico.py',93),
-  ('OPER -> PLUS','OPER',1,'p_OPER','sintatico.py',98),
-  ('OPER -> MINUS','OPER',1,'p_OPER','sintatico.py',99),
-  ('OPER -> DIVIDE','OPER',1,'p_OPER','sintatico.py',100),
-  ('OPER -> TIMES','OPER',1,'p_OPER','sintatico.py',101),
-  ('OPER -> LESSTHAN','OPER',1,'p_OPER','sintatico.py',102),
-  ('OPER -> GREATERTHAN','OPER',1,'p_OPER','sintatico.py',103),
-  ('OPER -> ATTR','OPER',1,'p_OPER','sintatico.py',104),
-  ('CMD -> EXPR SEMICOLON','CMD',2,'p_CMD','sintatico.py',108),
-  ('CMD -> EXPR SEMICOLON CMD','CMD',3,'p_CMD','sintatico.py',109),
-  ('CMD -> empty','CMD',1,'p_CMD','sintatico.py',110),
-  ('DEFINES -> DEFINE ID LPAREN LID RPAREN BLOCK','DEFINES',6,'p_DEFINES','sintatico.py',114),
-  ('FORS -> FOR','FORS',1,'p_FORS','sintatico.py',118),
-  ('empty -> <empty>','empty',0,'p_empty','sintatico.py',133),
+  ("S' -> STATMENT","S'",1,None,None,None),
+  ('STATMENT -> EXPR1','STATMENT',1,'p_STATMENT','sintatico.py',36),
+  ('STATMENT -> BLOCK','STATMENT',1,'p_STATMENT','sintatico.py',37),
+  ('STATMENT -> CMD','STATMENT',1,'p_STATMENT','sintatico.py',38),
+  ('STATMENT -> FORS','STATMENT',1,'p_STATMENT','sintatico.py',39),
+  ('STATMENT -> DEFINES','STATMENT',1,'p_STATMENT','sintatico.py',40),
+  ('STATMENT -> LID','STATMENT',1,'p_STATMENT','sintatico.py',41),
+  ('EXPR1 -> EXPR OPER EXPR','EXPR1',3,'p_EXPR1_EXPR_OPER_EXPR','sintatico.py',44),
+  ('EXPR -> NUMBER','EXPR',1,'p_EXPR_NUMBER','sintatico.py',60),
+  ('EXPR -> ID ATTR NUMBER','EXPR',3,'p_EXPR_ID_ATTR_EXPR','sintatico.py',64),
+  ('EXPR -> ID ATTR BOOL','EXPR',3,'p_EXPR_ID_ATTR_EXPR','sintatico.py',65),
+  ('EXPR -> ID','EXPR',1,'p_EXPR_ID','sintatico.py',70),
+  ('EXPR -> LPAREN EXPR RPAREN','EXPR',3,'p_EXPR_LPAREN_EXPR_RPAREN','sintatico.py',78),
+  ('EXPR -> EXPR PLUSEQUAL EXPR','EXPR',3,'p_EXPR_PLUSEQUAL_EXPR','sintatico.py',82),
+  ('EXPR -> EXPR MINUSEQUAL EXPR','EXPR',3,'p_EXPR_MINUSEQUAL_EXPR','sintatico.py',86),
+  ('EXPR -> EXPR TIMESEQUAL EXPR','EXPR',3,'p_EXPR_TIMESEQUAL_EXPR','sintatico.py',90),
+  ('LID -> ID','LID',1,'p_LID','sintatico.py',94),
+  ('BLOCK -> LCURLYBRACKETS CMD RCURLYBRACKETS','BLOCK',3,'p_BLOCK','sintatico.py',98),
+  ('OPER -> PLUS','OPER',1,'p_OPER','sintatico.py',103),
+  ('OPER -> MINUS','OPER',1,'p_OPER','sintatico.py',104),
+  ('OPER -> DIVIDE','OPER',1,'p_OPER','sintatico.py',105),
+  ('OPER -> TIMES','OPER',1,'p_OPER','sintatico.py',106),
+  ('OPER -> LESSTHAN','OPER',1,'p_OPER','sintatico.py',107),
+  ('OPER -> GREATERTHAN','OPER',1,'p_OPER','sintatico.py',108),
+  ('OPER -> ATTR','OPER',1,'p_OPER','sintatico.py',109),
+  ('CMD -> EXPR SEMICOLON','CMD',2,'p_CMD','sintatico.py',113),
+  ('CMD -> EXPR SEMICOLON CMD','CMD',3,'p_CMD','sintatico.py',114),
+  ('CMD -> empty','CMD',1,'p_CMD','sintatico.py',115),
+  ('DEFINES -> DEFINE ID LPAREN LID RPAREN BLOCK','DEFINES',6,'p_DEFINES','sintatico.py',119),
+  ('FORS -> FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN BLOCK','FORS',9,'p_FORS','sintatico.py',123),
+  ('empty -> <empty>','empty',0,'p_empty','sintatico.py',134),
 ]

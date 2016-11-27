@@ -13,7 +13,7 @@ logging.basicConfig(
     level = logging.DEBUG,
     filename = "parselog.txt",
     filemode = "w",
-    format = "%(filename) s:%(lineno) d:%(message)s"
+    format = "%(filename)10s:%(lineno)4d:%(message)s"
 )
 log = logging.getLogger()
 
@@ -21,11 +21,40 @@ precedence = (
     ('nonassoc', 'LESSTHAN', 'GREATERTHAN'),  # Nonassociative operators
     ('left', 'PLUS', 'MINUS'),
     ('left', 'TIMES', 'DIVIDE'),
-    ('right', 'UMINUS'),            # Unary minus operator
+    ('left', 'LESSTHAN', 'GREATERTHAN'),
+    ('right', 'ATTR', 'TIMESEQUAL', 'PLUSEQUAL'),
+    ('left', 'PLUS', 'MINUS'),
+    ('left', 'TIMES', 'DIVIDE'),
+    ('left', 'EXP'),
+    ('right', 'UMINUS'),
 )
 
 # dictionary of names
 names = { }
+
+def p_STATMENT(p):
+  '''STATMENT :  EXPR1
+                | BLOCK
+                | CMD
+                | FORS
+                | DEFINES 
+                | LID'''
+
+def p_EXPR1_EXPR_OPER_EXPR(p):
+  '''EXPR1 : EXPR OPER EXPR'''
+  if p[2] == '+':
+    p[0] = p[1] + p[3]
+  elif p[2] == '-':
+    p[0] = p[1] - p[3]
+  elif p[2] == '*':
+    p[0] = p[1] * p[3]
+  elif p[2] == '/':
+    p[0] = p[1] / p[3]
+  elif p[2] == '^':
+    p[0] = p[1] ** p[3]
+  elif p[2] == '=':
+    p[0] = p[1] = p[3]
+
 
 def p_EXPR_NUMBER(p):
   '''EXPR : NUMBER'''
@@ -49,33 +78,9 @@ def p_EXPR_LPAREN_EXPR_RPAREN(p):
   '''EXPR : LPAREN EXPR RPAREN'''
   p[0] = p[2]
 
-def p_EXPR_ATTR_EXPR(p):
-  '''EXPR : EXPR ATTR EXPR'''
-  p[0] = p[3]
-
-def p_EXPR_PLUS_EXPR(p):
-  '''EXPR : EXPR PLUS EXPR'''
-  p[0] = p[1] + p[3]
-
-def p_EXPR_MINUS_EXPR(p):
-  '''EXPR : EXPR MINUS EXPR'''
-  p[0] = p[1] - p[3]
-
-def p_EXPR_DIVIDE_EXPR(p):
-  '''EXPR : EXPR DIVIDE EXPR'''
-  p[0] = p[1] / p[3]
-
-def p_EXPR_TIMES_EXPR(p):
-  '''EXPR : EXPR TIMES EXPR'''
-  p[0] = p[1] * p[3]
-
 def p_EXPR_PLUSEQUAL_EXPR(p):
   '''EXPR : EXPR PLUSEQUAL EXPR'''
   p[0] = p[1] + p[3]
-
-def p_EXPR_EXP_EXPR(p):
-  '''EXPR : EXPR EXP EXPR'''
-  p[0] = int(p[1]) ** int(p[3])
 
 def p_EXPR_MINUSEQUAL_EXPR(p):
   '''EXPR : EXPR MINUSEQUAL EXPR'''
@@ -112,16 +117,16 @@ def p_CMD(p):
 
 def p_DEFINES(p):
   '''DEFINES : DEFINE ID LPAREN LID RPAREN BLOCK'''
-  pass
+  temp = names.get(p[2] , None)
+  if temp != None:
+    evaluate(temp)
+  elif:
+    names[p[2]] = ('define', p[4], p[6])
 
 def p_FORS(p):
   # for(a=0;a<10;a+=1){a+=2;}
-  # '''FORS : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN BLOCK'''
-  '''FORS : FOR'''
-  p[0] = ('for', p[3], p[5], p[7], p[10])
-  print(p[3])
-  print(p[5])
-  print(p[7])
+  '''FORS : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR RPAREN BLOCK'''
+  p[0] = ('for', p[3], p[5], p[7], p[9])
   evaluate(p[0])
 
 # Error rule for syntax errors
@@ -137,7 +142,6 @@ def evaluate(lst):
   if(lst[0] == 'for'):
     for i in range(lst[1],lst[2], lst[3]):
       print lst[4]
-
 
 # Build the parser
 parser = yacc.yacc(tabmodule='parsingTable', debug=True, debuglog=log, errorlog=log)

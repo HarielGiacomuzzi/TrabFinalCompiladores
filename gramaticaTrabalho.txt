@@ -1,0 +1,65 @@
+ident :=  a-z
+
+lstIdent := ident , lstident
+	     | ident
+
+oper :=   + | -  | * | / | ^ | > | >= | < | <= | != | && | `||` | == | ! | = | += | -= | *= | 
+
+cond :=   'if (' expr ') {' cmd ‘}'
+	   | ‘if (‘ expr ‘) {‘ cmd ‘} else {‘ cmd ‘}'
+	   | expr '?' cmd ':' cmd
+
+expr := expr oper expr 
+   	 | ident
+
+rep   := ‘while (‘ expr ‘) {‘ cmd ‘}’
+	 | ‘for (‘ expr ‘;’ expr ‘;’ expr ‘) {‘ cmd ‘}’ 
+
+print := ‘print(' texto ‘)'
+ 	 | ‘print(‘ ident ‘)’
+
+texto := [a-z0-9]*
+
+#################################################
+GRAMATICA QUE ESTÁ IMPLEMENTADA
+#################################################
+
+'''EXPR : NUMBER'''
+		| ID ATTR NUMBER
+        | ID ATTR BOOL
+		| ID
+		| LPAREN EXPR RPAREN
+		| EXPR ATTR EXPR
+		| EXPR PLUS EXPR
+		| EXPR MINUS EXPR
+		| EXPR DIVIDE EXPR
+		| EXPR TIMES EXPR
+		| EXPR PLUSEQUAL EXPR
+		| EXPR MINUSEQUAL EXPR
+		| EXPR TIMESEQUAL EXPR'''
+
+'''LID : ID, LID
+	   | ID '''
+
+'''BLOCK : LCURLYBRACKETS CMD RCURLYBRACKETS'''
+
+'''OPER   : PLUS
+          | MINUS
+          | DIVIDE
+          | TIMES
+          | LESSTHAN
+          | GREATERTHAN
+          | ATTR'''
+
+'''CMD   : EXPR SEMICOLON
+         | EXPR SEMICOLON CMD
+         | empty'''
+
+'''DEFINES : DEFINE ID LPAREN LID RPAREN BLOCK'''
+
+'''FORS : FOR LPAREN EXPR SEMICOLON EXPR SEMICOLON EXPR SEMICOLON RPAREN BLOCK'''
+
+'''empty :'''
+
+
+
